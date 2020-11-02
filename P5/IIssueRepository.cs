@@ -9,7 +9,7 @@ namespace P5
         bool Remove(Issue issue);
         string Modify(Issue issue);
         int GetTotalNumberOfIssues(int ProjectID);
-        List<string> GetIssuesBGyMonth(int ProjectID);
+        List<string> GetIssuesByMonth(int ProjectID);
         List<string> GetIssuesByDiscoverer(int ProjectID);
         Issue GetIssueByID(int ID);
     }

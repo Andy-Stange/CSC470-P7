@@ -97,7 +97,7 @@
     </Compile>
     <Compile Include="IAppUserRepository.cs" />
     <Compile Include="IIssueRepository.cs" />
-    <Compile Include="IISsueStatusRepository.cs" />
+    <Compile Include="IIssueStatusRepository.cs" />
     <Compile Include="IPreferenceRepository.cs" />
     <Compile Include="IProjectRepository.cs" />
     <Compile Include="FormLogin.cs">
