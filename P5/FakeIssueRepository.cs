@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 
 namespace P5
@@ -75,6 +76,25 @@ namespace P5
         public List<string> GetIssuesByMonth(int ProjectID)
         {
             List<string> IsMonth = new List<string>();
+            List<int> numbers = new List<int>();
+            foreach(Issue issue in Issues)
+            {
+                if (IsMonth.Contains(issue.DiscoveryDate.Year.ToString() + " - " + issue.DiscoveryDate.Month.ToString()))
+                {
+                    numbers[IsMonth.IndexOf(issue.DiscoveryDate.Year.ToString() + " - " + issue.DiscoveryDate.Month.ToString())]++;
+                }
+                else
+                {
+                    IsMonth.Add(issue.DiscoveryDate.Year.ToString() + " - " + issue.DiscoveryDate.Month.ToString());
+                    numbers.Add(1);
+                }
+            }
+            int index = 0;
+            foreach(int num in numbers)
+            {
+                IsMonth[index] = IsMonth[index] + ": " + numbers;
+                index++;
+            }
             return IsMonth;
         }
 
@@ -101,6 +121,31 @@ namespace P5
                 }
             }
             return isDup;
+        }
+        public string ValidateIssue(Issue issue)
+        {
+            int result = DateTime.Compare(issue.DiscoveryDate, DateTime.Now);
+            if(issue.Title == "")
+            {
+                return EMPTY_TITLE_ERROR;
+            }
+            if (isDuplicate(issue.Title))
+            {
+                return DUPLICATE_TITLE_ERROR;
+            }
+            if(issue.DiscoveryDate == null)
+            {
+                return EMPTY_DISCOVERY_DATETIME_ERROR;
+            }
+            if(result > 0)
+            {
+                return FUTURE_DISCOVERY_DATETIME_ERROR;
+            }
+            if(issue.Discoverer == "")
+            {
+                return EMPTY_DISCOVERER_ERROR;
+            }
+            return NO_ERROR;
         }
     }
 }

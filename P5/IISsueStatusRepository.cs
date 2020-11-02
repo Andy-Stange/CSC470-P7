@@ -2,7 +2,7 @@
 
 namespace P5
 {
-    public interface IISsueStatusRepository
+    public interface IIssueStatusRepository
     {
         void Add(int ID, string value);
         List<IssueStatus> GetAll(string value);
