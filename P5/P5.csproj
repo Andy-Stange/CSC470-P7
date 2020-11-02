@@ -157,6 +157,9 @@
     <EmbeddedResource Include="FormRemoveProject.resx">
       <DependentUpon>FormRemoveProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRemoveSelectIssue.resx">
+      <DependentUpon>FormRemoveSelectIssue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSelectProject.resx">
       <DependentUpon>FormSelectProject.cs</DependentUpon>
     </EmbeddedResource>

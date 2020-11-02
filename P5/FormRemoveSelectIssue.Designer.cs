@@ -73,6 +73,7 @@
             this.Controls.Add(this.dataIssue);
             this.Name = "FormRemoveSelectIssue";
             this.Text = "Select Issue";
+            this.Load += new System.EventHandler(this.FormRemoveSelectIssue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataIssue)).EndInit();
             this.ResumeLayout(false);
 

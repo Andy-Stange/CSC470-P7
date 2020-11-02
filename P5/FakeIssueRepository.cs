@@ -15,7 +15,7 @@ namespace P5
 
         private static List<Issue> Issues;
 
-        FakeIssueRepository()
+        public FakeIssueRepository()
         {
 
         }
@@ -45,6 +45,21 @@ namespace P5
                 }
             }
             return IssueList;
+        }
+
+        public bool Remove(Issue issue)
+        {
+            int index = 0;
+            foreach (Issue issues in Issues)
+            {
+                if (issues == issue)
+                {
+                    Issues.RemoveAt(index);
+                    return true;
+                }
+                index++;
+            }
+            return false;
         }
 
         public int GetTotalNumberOfIssues(int ProjectID)
