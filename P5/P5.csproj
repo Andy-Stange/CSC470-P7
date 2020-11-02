@@ -65,6 +65,36 @@
     <Compile Include="FakeIssueStatusRepository.cs" />
     <Compile Include="FakePreferenceRepository.cs" />
     <Compile Include="FakeProjectRepository.cs" />
+    <Compile Include="FormRemoveSelectIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRemoveSelectIssue.Designer.cs">
+      <DependentUpon>FormRemoveSelectIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRecordIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecordIssue.Designer.cs">
+      <DependentUpon>FormRecordIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifySelectIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifySelectIssue.Designer.cs">
+      <DependentUpon>FormModifySelectIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyIssue.Designer.cs">
+      <DependentUpon>FormModifyIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDashIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDashIssue.Designer.cs">
+      <DependentUpon>FormDashIssue.cs</DependentUpon>
+    </Compile>
     <Compile Include="IAppUserRepository.cs" />
     <Compile Include="IIssueRepository.cs" />
     <Compile Include="IISsueStatusRepository.cs" />

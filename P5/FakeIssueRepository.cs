@@ -4,7 +4,7 @@ using System.Security.AccessControl;
 
 namespace P5
 {
-    class FakeIssueRepository:IIssueRepository
+    class FakeIssueRepository:IssueRepository
     {
         public string NO_ERROR = "";
         public string EMPTY_TITLE_ERROR = "A Title is required.";
