@@ -2,7 +2,7 @@
 
 namespace P5
 {
-    class FakeIssueStatusRepository:IIssueStatusRepository
+    class FakeIssueStatusRepository
     {
         private List<IssueStatus> IssueStatuses;
     }

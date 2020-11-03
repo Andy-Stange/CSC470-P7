@@ -36,5 +36,13 @@ namespace Builder
             modDes.Text = i2.InitialDescription;
 
         }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            FakeIssueRepository iss2 = new FakeIssueRepository();
+            Issue i2 = iss2.GetIssueByID(Convert.ToInt32(modID.Text));
+
+            var result = iss2.Modify(i2);
+        }
     }
 }

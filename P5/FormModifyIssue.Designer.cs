@@ -38,7 +38,7 @@
             this.labelDes = new System.Windows.Forms.Label();
             this.modComp = new System.Windows.Forms.TextBox();
             this.modDes = new System.Windows.Forms.TextBox();
-            this.buttonCreate = new System.Windows.Forms.Button();
+            this.buttonModify = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.modDateTime = new System.Windows.Forms.DateTimePicker();
             this.modDis = new System.Windows.Forms.ComboBox();
@@ -131,14 +131,15 @@
             this.modDes.Size = new System.Drawing.Size(400, 272);
             this.modDes.TabIndex = 11;
             // 
-            // buttonCreate
+            // buttonModify
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(398, 591);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(140, 30);
-            this.buttonCreate.TabIndex = 12;
-            this.buttonCreate.Text = "Create Issue";
-            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonModify.Location = new System.Drawing.Point(398, 591);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(140, 30);
+            this.buttonModify.TabIndex = 12;
+            this.buttonModify.Text = "Modify Issue";
+            this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonCancel
             // 
@@ -190,7 +191,7 @@
             this.Controls.Add(this.modDis);
             this.Controls.Add(this.modDateTime);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonCreate);
+            this.Controls.Add(this.buttonModify);
             this.Controls.Add(this.modDes);
             this.Controls.Add(this.modComp);
             this.Controls.Add(this.labelDes);
@@ -220,7 +221,7 @@
         private System.Windows.Forms.Label labelDes;
         private System.Windows.Forms.TextBox modComp;
         private System.Windows.Forms.TextBox modDes;
-        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.DateTimePicker modDateTime;
         private System.Windows.Forms.ComboBox modDis;
