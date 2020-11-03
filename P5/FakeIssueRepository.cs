@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Builder;
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 
@@ -12,12 +13,27 @@ namespace P5
         public string FUTURE_DISCOVERY_DATETIME_ERROR = "Issues can't be from the future.";
         public string EMPTY_DISCOVERER_ERROR = "A Discoverer is required";
         public string DUPLICATE_TITLE_ERROR = "That title already exists!";
+        public const string MODIFIED_ISSUE_ERROR = "Can not modify the Issue.";
+        public const string EMPTY_PROJECT_NAME_ERROR = "Required Spots are empty or blank.";
+        public int _selectID;
 
         private static List<Issue> Issues;
 
         public FakeIssueRepository()
         {
 
+            Issues.Add(new Issue
+            {
+                ID = 1,
+                ProjectID = 1,
+                Title = "First Issue",
+                DiscoveryDate = System.Convert.ToDateTime("10/1/2017 12:00:00 AM"),
+                Discoverer = "Kyle",
+                InitialDescription = "The first issue ever",
+                Component = "FormMain",
+                IssueStatusID = 2
+
+            });
         }
 
         public string Add(Issue issue)
@@ -61,7 +77,23 @@ namespace P5
             }
             return false;
         }
+        public string Modify(Issue issue)
+        {
+            FormModifySelectIssue modify = new FormModifySelectIssue();
+            _selectID = modify._selectedID;
 
+            int index = 0;
+            foreach (Issue i in Issues)
+            {
+                if (_selectID == i.ID)
+                {
+                    Issues[index] = issue;
+                    return NO_ERROR;
+                }
+                index++;
+            }
+            return "Error";
+        }
         public int GetTotalNumberOfIssues(int ProjectID)
         {
             int issueCount = 0;

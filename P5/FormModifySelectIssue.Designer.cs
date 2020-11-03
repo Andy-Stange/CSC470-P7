@@ -53,6 +53,7 @@
             this.buttonSelect.TabIndex = 1;
             this.buttonSelect.Text = "Select Issue";
             this.buttonSelect.UseVisualStyleBackColor = true;
+            this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
             // 
             // buttonCancel
             // 
@@ -62,8 +63,9 @@
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // FormSelectIssue
+            // FormModifySelectIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,8 +73,9 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSelect);
             this.Controls.Add(this.dataIssue);
-            this.Name = "FormModifyectIssue";
+            this.Name = "FormModifySelectIssue";
             this.Text = "Select Issue";
+            this.Load += new System.EventHandler(this.FormModifySelectIssue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataIssue)).EndInit();
             this.ResumeLayout(false);
 
