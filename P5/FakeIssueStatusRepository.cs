@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace P5
 {
-    public class FakeIssueStatusRepository : IIssueStatusRepository
+    class FakeIssueStatusRepository:IIssueStatusRepository
     {
         private List<IssueStatus> IssueStatuses;
         public void Add(int StatID, string Value)

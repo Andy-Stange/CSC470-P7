@@ -34,16 +34,16 @@
             this.labelDis = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelStat = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.modTitle = new System.Windows.Forms.TextBox();
             this.labelDes = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.buttonCreate = new System.Windows.Forms.Button();
+            this.modComp = new System.Windows.Forms.TextBox();
+            this.modDes = new System.Windows.Forms.TextBox();
+            this.buttonModify = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.modDateTime = new System.Windows.Forms.DateTimePicker();
+            this.modDis = new System.Windows.Forms.ComboBox();
+            this.modStatus = new System.Windows.Forms.ComboBox();
+            this.modID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelID
@@ -100,20 +100,12 @@
             this.labelStat.TabIndex = 3;
             this.labelStat.Text = "Status:";
             // 
-            // textBox1
+            // modTitle
             // 
-            this.textBox1.Location = new System.Drawing.Point(138, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(138, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(400, 26);
-            this.textBox2.TabIndex = 8;
+            this.modTitle.Location = new System.Drawing.Point(138, 90);
+            this.modTitle.Name = "modTitle";
+            this.modTitle.Size = new System.Drawing.Size(400, 26);
+            this.modTitle.TabIndex = 8;
             // 
             // labelDes
             // 
@@ -124,29 +116,30 @@
             this.labelDes.TabIndex = 9;
             this.labelDes.Text = "Intial Description:";
             // 
-            // textBox3
+            // modComp
             // 
-            this.textBox3.Location = new System.Drawing.Point(138, 190);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(400, 26);
-            this.textBox3.TabIndex = 10;
+            this.modComp.Location = new System.Drawing.Point(138, 190);
+            this.modComp.Name = "modComp";
+            this.modComp.Size = new System.Drawing.Size(400, 26);
+            this.modComp.TabIndex = 10;
             // 
-            // textBox4
+            // modDes
             // 
-            this.textBox4.Location = new System.Drawing.Point(138, 273);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(400, 272);
-            this.textBox4.TabIndex = 11;
+            this.modDes.Location = new System.Drawing.Point(138, 273);
+            this.modDes.Multiline = true;
+            this.modDes.Name = "modDes";
+            this.modDes.Size = new System.Drawing.Size(400, 272);
+            this.modDes.TabIndex = 11;
             // 
-            // buttonCreate
+            // buttonModify
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(398, 591);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(140, 30);
-            this.buttonCreate.TabIndex = 12;
-            this.buttonCreate.Text = "Create Issue";
-            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonModify.Location = new System.Drawing.Point(398, 591);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(140, 30);
+            this.buttonModify.TabIndex = 12;
+            this.buttonModify.Text = "Modify Issue";
+            this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonCancel
             // 
@@ -157,44 +150,52 @@
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // modDateTime
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(138, 125);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(400, 26);
-            this.dateTimePicker1.TabIndex = 14;
+            this.modDateTime.Location = new System.Drawing.Point(138, 125);
+            this.modDateTime.Name = "modDateTime";
+            this.modDateTime.Size = new System.Drawing.Size(400, 26);
+            this.modDateTime.TabIndex = 14;
             // 
-            // comboBox1
+            // modDis
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(138, 155);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(400, 28);
-            this.comboBox1.TabIndex = 15;
+            this.modDis.FormattingEnabled = true;
+            this.modDis.Location = new System.Drawing.Point(138, 155);
+            this.modDis.Name = "modDis";
+            this.modDis.Size = new System.Drawing.Size(400, 28);
+            this.modDis.TabIndex = 15;
             // 
-            // comboBox2
+            // modStatus
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(138, 220);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(400, 28);
-            this.comboBox2.TabIndex = 16;
+            this.modStatus.FormattingEnabled = true;
+            this.modStatus.Location = new System.Drawing.Point(138, 220);
+            this.modStatus.Name = "modStatus";
+            this.modStatus.Size = new System.Drawing.Size(400, 28);
+            this.modStatus.TabIndex = 16;
+            // 
+            // modID
+            // 
+            this.modID.Location = new System.Drawing.Point(138, 58);
+            this.modID.Name = "modID";
+            this.modID.ReadOnly = true;
+            this.modID.Size = new System.Drawing.Size(82, 26);
+            this.modID.TabIndex = 17;
             // 
             // FormModifyIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 676);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.modID);
+            this.Controls.Add(this.modStatus);
+            this.Controls.Add(this.modDis);
+            this.Controls.Add(this.modDateTime);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonCreate);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.buttonModify);
+            this.Controls.Add(this.modDes);
+            this.Controls.Add(this.modComp);
             this.Controls.Add(this.labelDes);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.modTitle);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelDis);
             this.Controls.Add(this.labelComp);
@@ -203,6 +204,7 @@
             this.Controls.Add(this.labelID);
             this.Name = "FormModifyIssue";
             this.Text = "Modify Issue";
+            this.Load += new System.EventHandler(this.FormModifyIssue_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,15 +217,15 @@
         private System.Windows.Forms.Label labelDate;
         public System.Windows.Forms.Label labelID;
         private System.Windows.Forms.Label labelStat;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox modTitle;
         private System.Windows.Forms.Label labelDes;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.TextBox modComp;
+        private System.Windows.Forms.TextBox modDes;
+        private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker modDateTime;
+        private System.Windows.Forms.ComboBox modDis;
+        private System.Windows.Forms.ComboBox modStatus;
+        private System.Windows.Forms.TextBox modID;
     }
 }
