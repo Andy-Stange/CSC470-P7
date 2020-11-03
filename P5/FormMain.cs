@@ -5,6 +5,7 @@ namespace P5
     public partial class FormMain : Form
     {
         private AppUser _CurrentAppUser = new AppUser();
+        private int CurrentProjectID;
         public FormMain()
         {
             InitializeComponent();
@@ -62,6 +63,7 @@ namespace P5
                                                    FakePreferenceRepository.PREFERENCE_PROJECT_NAME,
                                                    form._SelectedProjectName);
                 int selectedProjectId = form._SelectedProjectId;
+                CurrentProjectID = form._SelectedProjectId;
                 preferenceRepository.SetPreference(_CurrentAppUser.UserName,
                                                    FakePreferenceRepository.PREFERENCE_PROJECT_ID,
                                                    selectedProjectId.ToString());
@@ -82,6 +84,13 @@ namespace P5
         private void preferencesRemoveProjectToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             FormRemoveProject form = new FormRemoveProject(_CurrentAppUser);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void issuesRecordToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormRecordIssue form = new FormRecordIssue(CurrentProjectID);
             form.ShowDialog();
             form.Dispose();
         }

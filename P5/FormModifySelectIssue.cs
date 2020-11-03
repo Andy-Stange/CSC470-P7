@@ -16,5 +16,10 @@ namespace Builder
         {
             InitializeComponent();
         }
+
+        private void dataIssue_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

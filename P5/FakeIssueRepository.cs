@@ -78,12 +78,27 @@ namespace P5
         public List<string> GetIssuesByDiscoverer(int ProjectID)
         {
             List<string> Discs = new List<string>();
-            foreach(Issue issue in Issues)
+            List<int> numbers = new List<int>();
+            foreach (Issue issue in Issues)
             {
-                if(ProjectID == issue.ProjectID)
+                if (ProjectID == issue.ProjectID)
                 {
-                    Discs.Add(issue.Discoverer);
+                    if (Discs.Contains(issue.Discoverer))
+                    {
+                        numbers[Discs.IndexOf(issue.Discoverer)]++;
+                    }
+                    else
+                    {
+                        Discs.Add(issue.Discoverer);
+                        numbers.Add(1);
+                    }
                 }
+            }
+            int index = 0;
+            foreach (int num in numbers)
+            {
+                Discs[index] = Discs[index] + ": " + numbers;
+                index++;
             }
             return Discs;
         }
@@ -94,14 +109,17 @@ namespace P5
             List<int> numbers = new List<int>();
             foreach(Issue issue in Issues)
             {
-                if (IsMonth.Contains(issue.DiscoveryDate.Year.ToString() + " - " + issue.DiscoveryDate.Month.ToString()))
+                if (issue.ProjectID == ProjectID)
                 {
-                    numbers[IsMonth.IndexOf(issue.DiscoveryDate.Year.ToString() + " - " + issue.DiscoveryDate.Month.ToString())]++;
-                }
-                else
-                {
-                    IsMonth.Add(issue.DiscoveryDate.Year.ToString() + " - " + issue.DiscoveryDate.Month.ToString());
-                    numbers.Add(1);
+                    if (IsMonth.Contains(issue.DiscoveryDate.Year.ToString() + " - " + issue.DiscoveryDate.Month.ToString()))
+                    {
+                        numbers[IsMonth.IndexOf(issue.DiscoveryDate.Year.ToString() + " - " + issue.DiscoveryDate.Month.ToString())]++;
+                    }
+                    else
+                    {
+                        IsMonth.Add(issue.DiscoveryDate.Year.ToString() + " - " + issue.DiscoveryDate.Month.ToString());
+                        numbers.Add(1);
+                    }
                 }
             }
             int index = 0;
@@ -161,6 +179,22 @@ namespace P5
                 return EMPTY_DISCOVERER_ERROR;
             }
             return NO_ERROR;
+        }
+        public int GetNextIssueID(int ProjectID)
+        {
+            int currMaxIssueID = 0;
+            foreach(Issue issue in Issues)
+            {
+                if(ProjectID == issue.ProjectID)
+                {
+                    if(issue.ID > currMaxIssueID)
+                    {
+                        currMaxIssueID = issue.ID;
+                    }
+                }
+            }
+            currMaxIssueID++;
+            return currMaxIssueID;
         }
     }
 }
