@@ -14,7 +14,6 @@ namespace Builder
     public partial class FormRemoveSelectIssue : Form
     {
         public int _selectedID;
-        public string _selectedTitle;
         public int _selectedProj;
         public FormRemoveSelectIssue(int CurrentProjID)
         {
@@ -50,6 +49,16 @@ namespace Builder
         private void buttonSelect_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonSelect_Click_1(object sender, EventArgs e)
+        {
+
             if (dataIssue.SelectedCells.Count < 0)
             {
                 MessageBox.Show("A Issue must be selected.", "Attention");
@@ -60,12 +69,11 @@ namespace Builder
                 DataGridViewRow selectedRow = dataIssue.Rows[_selectedID];
                 int sID = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
+                _selectedID = sID;
+
                 FakeIssueRepository iss2 = new FakeIssueRepository();
                 Issue i2 = iss2.GetIssueByID(sID);
-
-               
-                DialogResult result= MessageBox.Show("Are you sure you want to Remove:" + i2.Title,
-                                    "Confirmation");
+                DialogResult result = MessageBox.Show("Are you sure you want to Remove:" + i2.Title, "Confirmation", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     bool res = iss2.Remove(i2);
@@ -75,7 +83,6 @@ namespace Builder
                     MessageBox.Show("Remove Canceled", "Attention", MessageBoxButtons.OK);
                 }
             }
-           
 
         }
     }

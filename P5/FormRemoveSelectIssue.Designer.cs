@@ -53,6 +53,7 @@
             this.buttonSelect.TabIndex = 1;
             this.buttonSelect.Text = "Select Issue";
             this.buttonSelect.UseVisualStyleBackColor = true;
+            this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click_1);
             // 
             // buttonCancel
             // 
@@ -62,6 +63,7 @@
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // FormRemoveSelectIssue
             // 
