@@ -14,9 +14,10 @@ namespace Builder
     public partial class FormModifySelectIssue : Form
     {
         public int _selectedID;
-        public FormModifySelectIssue()
+        public FormModifySelectIssue(int CurrentProjectID)
         {
             InitializeComponent();
+            _selectedID = CurrentProjectID;
         }
 
         private void FormModifySelectIssue_Load(object sender, EventArgs e)

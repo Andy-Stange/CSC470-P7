@@ -22,9 +22,6 @@ namespace Builder
 
         private void FormModifyIssue_Load(object sender, EventArgs e)
         {
-            FormModifySelectIssue modify = new FormModifySelectIssue();
-            _selectID = modify._selectedID;
-
             FakeIssueRepository iss = new FakeIssueRepository();
             Issue i2 = iss.GetIssueByID(_selectID);
             modID.Text = Convert.ToString(i2.ID);

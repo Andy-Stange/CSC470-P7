@@ -17,7 +17,7 @@ namespace P5
         public const string EMPTY_PROJECT_NAME_ERROR = "Required Spots are empty or blank.";
         public int _selectID;
 
-        private static List<Issue> Issues;
+        private static List<Issue> Issues = new List<Issue>();
 
         public FakeIssueRepository()
         {
@@ -79,9 +79,6 @@ namespace P5
         }
         public string Modify(Issue issue)
         {
-            FormModifySelectIssue modify = new FormModifySelectIssue();
-            _selectID = modify._selectedID;
-
             int index = 0;
             foreach (Issue i in Issues)
             {
