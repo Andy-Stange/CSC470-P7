@@ -65,7 +65,7 @@ namespace Builder
 
                 FormModifyIssue mod = new FormModifyIssue(_selectedID);
                 mod.ShowDialog();
-
+                this.Close();
             }
         }
 

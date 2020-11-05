@@ -105,16 +105,7 @@ namespace P5
 
         public bool Remove(Issue issue)
         {
-            int index = 0;
-            foreach (Issue issues in Issues)
-            {
-                if (issues == issue)
-                {
-                    Issues.RemoveAt(index);
-                    return true;
-                }
-                index++;
-            }
+            Issues.Remove(issue);
             return false;
         }
         public string Modify(Issue issue)
