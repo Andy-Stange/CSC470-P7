@@ -23,57 +23,59 @@ namespace P5
 
         public FakeIssueRepository()
         {
-
-            Issues.Add(new Issue
+            if (Issues.Count == 0)
             {
-                ID = 1,
-                ProjectID = 1,
-                Title = "First Issue",
-                DiscoveryDate = System.Convert.ToDateTime("10/1/2017 12:00:00 AM"),
-                Discoverer = "Kyle",
-                InitialDescription = "The first issue ever",
-                Component = "FormMain",
-                IssueStatusID = 2
+                Issues.Add(new Issue
+                {
+                    ID = 1,
+                    ProjectID = 1,
+                    Title = "First Issue",
+                    DiscoveryDate = System.Convert.ToDateTime("10/1/2017 12:00:00 AM"),
+                    Discoverer = "Kyle",
+                    InitialDescription = "The first issue ever",
+                    Component = "FormMain",
+                    IssueStatusID = 2
 
-            });
-            Issues.Add(new Issue
-            {
-                ID = 2,
-                ProjectID = 1,
-                Title = "Second Issue",
-                DiscoveryDate = System.Convert.ToDateTime("10/9/2017 12:00:00 AM"),
-                Discoverer = "Kyle",
-                InitialDescription = "The Second issue ever",
-                Component = "FormMain",
-                IssueStatusID = 2
+                });
+                Issues.Add(new Issue
+                {
+                    ID = 2,
+                    ProjectID = 1,
+                    Title = "Second Issue",
+                    DiscoveryDate = System.Convert.ToDateTime("10/9/2017 12:00:00 AM"),
+                    Discoverer = "Kyle",
+                    InitialDescription = "The Second issue ever",
+                    Component = "FormMain",
+                    IssueStatusID = 2
 
-            });
-            Issues.Add(new Issue
-            {
-                ID = 3,
-                ProjectID = 1,
-                Title = "Third Issue",
-                DiscoveryDate = System.Convert.ToDateTime("10/31/2017 12:00:00 AM"),
-                Discoverer = "Kyle",
-                InitialDescription = "The Third issue ever",
-                Component = "FormMain",
-                IssueStatusID = 1
+                });
+                Issues.Add(new Issue
+                {
+                    ID = 3,
+                    ProjectID = 1,
+                    Title = "Third Issue",
+                    DiscoveryDate = System.Convert.ToDateTime("10/31/2017 12:00:00 AM"),
+                    Discoverer = "Kyle",
+                    InitialDescription = "The Third issue ever",
+                    Component = "FormMain",
+                    IssueStatusID = 1
 
-            });
-            Issues.Add(new Issue
-            {
-                ID = 4,
-                ProjectID = 1,
-                Title = "Fourth Issue",
-                DiscoveryDate = System.Convert.ToDateTime("11/15/2017 12:00:00 AM"),
-                Discoverer = "Kyle",
-                InitialDescription = "The Fourth issue ever",
-                Component = "FormMain",
-                IssueStatusID = 2
+                });
+                Issues.Add(new Issue
+                {
+                    ID = 4,
+                    ProjectID = 1,
+                    Title = "Fourth Issue",
+                    DiscoveryDate = System.Convert.ToDateTime("11/15/2017 12:00:00 AM"),
+                    Discoverer = "Kyle",
+                    InitialDescription = "The Fourth issue ever",
+                    Component = "FormMain",
+                    IssueStatusID = 2
 
-            });
+                });
+
+            }
         }
-
         public string Add(Issue issue)
         {
             if (isDuplicate(issue.Title))
