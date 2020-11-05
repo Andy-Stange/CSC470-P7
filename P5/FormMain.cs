@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Builder;
+using System.Windows.Forms;
 
 namespace P5
 {
@@ -91,6 +92,20 @@ namespace P5
         private void issuesRecordToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             FormRecordIssue form = new FormRecordIssue(CurrentProjectID);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void issuesModifyToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormModifySelectIssue form = new FormModifySelectIssue(CurrentProjectID);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void issuesRemoveToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormRemoveSelectIssue form = new FormRemoveSelectIssue(CurrentProjectID);
             form.ShowDialog();
             form.Dispose();
         }

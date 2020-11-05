@@ -15,24 +15,46 @@ namespace Builder
     {
         public int _selectedID;
         public string _selectedTitle;
-        public FormRemoveSelectIssue()
+        public int _selectedProj;
+        public FormRemoveSelectIssue(int CurrentProjID)
         {
             InitializeComponent();
+            _selectedProj = CurrentProjID;
         }
 
         private void FormRemoveSelectIssue_Load(object sender, EventArgs e)
         {
+            this.CenterToParent();
             FakeIssueRepository iss = new FakeIssueRepository();
-            Issue i = new Issue();
-            dataIssue.DataSource = iss.GetAll(i.ProjectID);
+            List<Issue> yourList = iss.GetAll(_selectedProj);
+
+            dataIssue.ColumnCount = 7;
+            dataIssue.Columns[0].Name = "Id";
+            dataIssue.Columns[0].Width = 30;
+            dataIssue.Columns[1].Name = "Title";
+            dataIssue.Columns[1].Width = 400;
+            dataIssue.Columns[2].Name = "Discovery Date";
+            dataIssue.Columns[1].Width = 150;
+            dataIssue.Columns[3].Name = "Discoverer";
+            dataIssue.Columns[4].Name = "IntialDes.";
+            dataIssue.Columns[5].Name = "Components";
+            dataIssue.Columns[6].Name = "Status";
+
+            foreach (Issue i2 in yourList)
+            {
+                string[] row = {i2.ID.ToString(),i2.Title,i2.DiscoveryDate.ToString("yyyymmdd hh:mm"),
+                                 i2.Discoverer,i2.InitialDescription,i2.Component,i2.IssueStatusID.ToString()};
+                dataIssue.Rows.Add(row);
+            }
         }
         private void buttonSelect_Click(object sender, EventArgs e)
         {
+
             if (dataIssue.SelectedCells.Count < 0)
             {
                 MessageBox.Show("A Issue must be selected.", "Attention");
             }
-            else if (dataIssue.SelectedCells.Count == 1)
+            else
             {
                 _selectedID = dataIssue.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataIssue.Rows[_selectedID];
@@ -41,10 +63,9 @@ namespace Builder
                 FakeIssueRepository iss2 = new FakeIssueRepository();
                 Issue i2 = iss2.GetIssueByID(sID);
 
-                DialogResult result = MessageBox.Show("Are you sure you want to Remove:" + i2.Title,
-                                    "Confirmation",
-                                     MessageBoxButtons.YesNo,
-                                     MessageBoxIcon.Question);
+               
+                DialogResult result= MessageBox.Show("Are you sure you want to Remove:" + i2.Title,
+                                    "Confirmation");
                 if (result == DialogResult.Yes)
                 {
                     bool res = iss2.Remove(i2);
@@ -52,12 +73,9 @@ namespace Builder
                 else
                 {
                     MessageBox.Show("Remove Canceled", "Attention", MessageBoxButtons.OK);
-                }       
+                }
             }
-            else
-            {
-                MessageBox.Show("Only 1 Issue can be selected.", "Attention");
-            }
+           
 
         }
     }
