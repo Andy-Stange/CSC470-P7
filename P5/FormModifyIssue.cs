@@ -40,17 +40,17 @@ namespace Builder
         private void buttonModify_Click(object sender, EventArgs e)
         {
             FakeIssueRepository iss2 = new FakeIssueRepository();
-            Issue i2 = new Issue();
-            i2.ID = Convert.ToInt32(modID.Text);
-            i2.Title = modTitle.Text;
-            i2.DiscoveryDate = Convert.ToDateTime(modDateTime.Text);
-            i2.Discoverer = modDis.Text;
-            i2.Component = modComp.Text;
-            i2.IssueStatusID = Convert.ToInt32(modStatus.Text);
-            i2.InitialDescription = modDes.Text;
+            Issue i3 = new Issue();
+            i3.ID = Convert.ToInt32(modID.Text);
+            i3.Title = modTitle.Text;
+            i3.DiscoveryDate = Convert.ToDateTime(modDateTime.Text);
+            i3.Discoverer = modDis.Text;
+            i3.Component = modComp.Text;
+            i3.IssueStatusID = Convert.ToInt32(modStatus.Text);
+            i3.InitialDescription = modDes.Text;
 
 
-            var result = iss2.Modify(i2);
+            var result = iss2.Modify(i3);
             this.Close();
         }
     }
