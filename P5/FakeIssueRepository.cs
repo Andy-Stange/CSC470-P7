@@ -117,7 +117,13 @@ namespace P5
             {
                 if (_selectID == i.ID)
                 {
-                    Issues[index] = issue;
+                    Issues[index].ID = issue.ID;
+                    Issues[index].Title = issue.Title;                        ;
+                    Issues[index].DiscoveryDate = issue.DiscoveryDate;
+                    Issues[index].Discoverer = issue.Discoverer;
+                    Issues[index].Component = issue.Component;
+                    Issues[index].IssueStatusID = issue.IssueStatusID;
+                    Issues[index].InitialDescription = issue.InitialDescription;
                     return NO_ERROR;
                 }
                 index++;

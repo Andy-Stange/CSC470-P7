@@ -23,7 +23,6 @@ namespace Builder
 
         private void FormModifyIssue_Load(object sender, EventArgs e)
         {
-
             this.CenterToParent();
             FakeIssueRepository iss = new FakeIssueRepository();
             Issue i2 = iss.GetIssueByID(_selectID);
@@ -37,20 +36,20 @@ namespace Builder
 
         }
 
-        private void buttonModify_Click(object sender, EventArgs e)
+        private void ButtonModify_Click(object sender, EventArgs e)
         {
             FakeIssueRepository iss2 = new FakeIssueRepository();
-            Issue i3 = new Issue();
-            i3.ID = Convert.ToInt32(modID.Text);
-            i3.Title = modTitle.Text;
-            i3.DiscoveryDate = Convert.ToDateTime(modDateTime.Text);
-            i3.Discoverer = modDis.Text;
-            i3.Component = modComp.Text;
-            i3.IssueStatusID = Convert.ToInt32(modStatus.Text);
-            i3.InitialDescription = modDes.Text;
-
-
-            var result = iss2.Modify(i3);
+            Issue i3 = new Issue
+            {
+                ID = Convert.ToInt32(modID.Text),
+                Title = modTitle.Text,
+                DiscoveryDate = Convert.ToDateTime(modDateTime.Text),
+                Discoverer = modDis.Text,
+                Component = modComp.Text,
+                IssueStatusID = Convert.ToInt32(modStatus.Text),
+                InitialDescription = modDes.Text
+            };
+            _ = iss2.Modify(i3);
             this.Close();
         }
     }

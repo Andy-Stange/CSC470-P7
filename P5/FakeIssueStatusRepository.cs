@@ -9,7 +9,7 @@ namespace P5
     {
         private static List<IssueStatus> IssueStatuses = new List<IssueStatus>();
 
-        FakeIssueStatusRepository()
+        public FakeIssueStatusRepository()
         {
             IssueStatuses.Add(new IssueStatus
             {
