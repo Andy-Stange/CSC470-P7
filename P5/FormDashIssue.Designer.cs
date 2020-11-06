@@ -31,9 +31,9 @@
             this.issueLabel = new System.Windows.Forms.Label();
             this.issueNumber = new System.Windows.Forms.Label();
             this.issueMonth = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listMonth = new System.Windows.Forms.ListBox();
             this.issueDis = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listDis = new System.Windows.Forms.ListBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -45,16 +45,15 @@
             this.issueLabel.Size = new System.Drawing.Size(177, 20);
             this.issueLabel.TabIndex = 0;
             this.issueLabel.Text = "Total Number of Issues:";
-           
             // 
             // issueNumber
             // 
             this.issueNumber.AutoSize = true;
             this.issueNumber.Location = new System.Drawing.Point(273, 71);
             this.issueNumber.Name = "issueNumber";
-            this.issueNumber.Size = new System.Drawing.Size(51, 20);
+            this.issueNumber.Size = new System.Drawing.Size(76, 20);
             this.issueNumber.TabIndex = 1;
-            this.issueNumber.Text = "label2";
+            this.issueNumber.Text = "labelssue";
             // 
             // issueMonth
             // 
@@ -65,14 +64,14 @@
             this.issueMonth.TabIndex = 2;
             this.issueMonth.Text = "Issues by Month";
             // 
-            // listBox1
+            // listMonth
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(94, 162);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(328, 164);
-            this.listBox1.TabIndex = 3;
+            this.listMonth.FormattingEnabled = true;
+            this.listMonth.ItemHeight = 20;
+            this.listMonth.Location = new System.Drawing.Point(94, 162);
+            this.listMonth.Name = "listMonth";
+            this.listMonth.Size = new System.Drawing.Size(328, 164);
+            this.listMonth.TabIndex = 3;
             // 
             // issueDis
             // 
@@ -82,16 +81,15 @@
             this.issueDis.Size = new System.Drawing.Size(155, 20);
             this.issueDis.TabIndex = 4;
             this.issueDis.Text = "Issues by Discoverer";
-           
             // 
-            // listBox2
+            // listDis
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(94, 399);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(328, 164);
-            this.listBox2.TabIndex = 5;
+            this.listDis.FormattingEnabled = true;
+            this.listDis.ItemHeight = 20;
+            this.listDis.Location = new System.Drawing.Point(94, 399);
+            this.listDis.Name = "listDis";
+            this.listDis.Size = new System.Drawing.Size(328, 164);
+            this.listDis.TabIndex = 5;
             // 
             // buttonCancel
             // 
@@ -102,7 +100,6 @@
             this.buttonCancel.TabIndex = 7;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
-           
             // 
             // FormDashIssue
             // 
@@ -110,14 +107,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 694);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.listDis);
             this.Controls.Add(this.issueDis);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listMonth);
             this.Controls.Add(this.issueMonth);
             this.Controls.Add(this.issueNumber);
             this.Controls.Add(this.issueLabel);
             this.Name = "FormDashIssue";
             this.Text = "Issue Dashboard";
+            this.Load += new System.EventHandler(this.FormDashIssue_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,9 +126,9 @@
         private System.Windows.Forms.Label issueLabel;
         private System.Windows.Forms.Label issueNumber;
         private System.Windows.Forms.Label issueMonth;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listMonth;
         private System.Windows.Forms.Label issueDis;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listDis;
         private System.Windows.Forms.Button buttonCancel;
     }
 }

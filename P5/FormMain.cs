@@ -109,5 +109,12 @@ namespace P5
             form.ShowDialog();
             form.Dispose();
         }
+
+        private void issuesDashboardToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormDashIssue form = new FormDashIssue(CurrentProjectID);
+            form.ShowDialog();
+            form.Dispose();
+        }
     }
 }

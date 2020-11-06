@@ -124,6 +124,7 @@ namespace P5
                     Issues[index].Component = issue.Component;
                     Issues[index].IssueStatusID = issue.IssueStatusID;
                     Issues[index].InitialDescription = issue.InitialDescription;
+                   
                     return NO_ERROR;
                 }
                 index++;
