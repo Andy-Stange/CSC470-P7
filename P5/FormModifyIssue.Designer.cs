@@ -139,7 +139,7 @@
             this.buttonModify.TabIndex = 12;
             this.buttonModify.Text = "Modify Issue";
             this.buttonModify.UseVisualStyleBackColor = true;
-            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
+            this.buttonModify.Click += new System.EventHandler(this.ButtonModify_Click);
             // 
             // buttonCancel
             // 

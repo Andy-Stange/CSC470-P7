@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms;
 
 namespace P5
 {
@@ -110,15 +111,20 @@ namespace P5
         }
         public string Modify(Issue issue)
         {
-            FormModifySelectIssue modify = new FormModifySelectIssue(CurrentProjID);
-            _selectID = modify._selectedID;
-
+            _selectID = issue.ID;
             int index = 0;
             foreach (Issue i in Issues)
             {
                 if (_selectID == i.ID)
                 {
-                    Issues[index] = issue;
+                    Issues[index].ID = issue.ID;
+                    Issues[index].Title = issue.Title;                        ;
+                    Issues[index].DiscoveryDate = issue.DiscoveryDate;
+                    Issues[index].Discoverer = issue.Discoverer;
+                    Issues[index].Component = issue.Component;
+                    Issues[index].IssueStatusID = issue.IssueStatusID;
+                    Issues[index].InitialDescription = issue.InitialDescription;
+                   
                     return NO_ERROR;
                 }
                 index++;

@@ -58,7 +58,7 @@ namespace Builder
 
         private void buttonSelect_Click_1(object sender, EventArgs e)
         {
-
+            this.Hide();
             if (dataIssue.SelectedCells.Count < 0)
             {
                 MessageBox.Show("A Issue must be selected.", "Attention");
@@ -77,6 +77,7 @@ namespace Builder
                 if (result == DialogResult.Yes)
                 {
                     bool res = iss2.Remove(i2);
+                    this.Close();
                 }
                 else
                 {
