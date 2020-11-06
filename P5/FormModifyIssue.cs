@@ -52,5 +52,10 @@ namespace Builder
             _ = iss2.Modify(i3);
             this.Close();
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

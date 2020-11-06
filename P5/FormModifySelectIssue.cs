@@ -26,6 +26,7 @@ namespace Builder
         {
             this.CenterToParent();
             FakeIssueRepository iss = new FakeIssueRepository();
+            FakeIssueStatusRepository IsStat = new FakeIssueStatusRepository();
             List<Issue> yourList = iss.GetAll(_selectedProj);
 
             dataIssue.ColumnCount = 7;
@@ -44,11 +45,12 @@ namespace Builder
             dataIssue.Columns[6].Name = "Status";
             dataIssue.Columns[6].Width = 80;
 
-
+            string IsStatVal;
             foreach (Issue i2 in yourList)
             {
+                IsStatVal = IsStat.GetValueByID(i2.IssueStatusID);
                 string[] row = {i2.ID.ToString(),i2.Title,i2.DiscoveryDate.ToString("MM/dd/yyyy HH:mm:ss tt"),
-                                 i2.Discoverer,i2.InitialDescription,i2.Component,i2.IssueStatusID.ToString()};
+                                 i2.Discoverer,i2.InitialDescription,i2.Component,IsStatVal};
                 dataIssue.Rows.Add(row);
             }
 

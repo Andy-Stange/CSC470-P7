@@ -21,6 +21,7 @@ namespace P5
 
         private void FormRecordIssue_Load(object sender, EventArgs e)
         {
+            this.CenterToParent();
             int nextID;
             string disc;
             string IsStat;

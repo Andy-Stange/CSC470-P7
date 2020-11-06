@@ -49,93 +49,97 @@
             // labelID
             // 
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(102, 60);
+            this.labelID.Location = new System.Drawing.Point(91, 48);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(30, 20);
+            this.labelID.Size = new System.Drawing.Size(25, 17);
             this.labelID.TabIndex = 0;
             this.labelID.Text = "ID:";
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Location = new System.Drawing.Point(90, 90);
+            this.labelTitle.Location = new System.Drawing.Point(80, 72);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(42, 20);
+            this.labelTitle.Size = new System.Drawing.Size(39, 17);
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "Title:";
             // 
             // labelComp
             // 
             this.labelComp.AutoSize = true;
-            this.labelComp.Location = new System.Drawing.Point(36, 190);
+            this.labelComp.Location = new System.Drawing.Point(32, 152);
             this.labelComp.Name = "labelComp";
-            this.labelComp.Size = new System.Drawing.Size(96, 20);
+            this.labelComp.Size = new System.Drawing.Size(84, 17);
             this.labelComp.TabIndex = 4;
             this.labelComp.Text = "Component:";
             // 
             // labelDis
             // 
             this.labelDis.AutoSize = true;
-            this.labelDis.Location = new System.Drawing.Point(44, 155);
+            this.labelDis.Location = new System.Drawing.Point(39, 124);
             this.labelDis.Name = "labelDis";
-            this.labelDis.Size = new System.Drawing.Size(88, 20);
+            this.labelDis.Size = new System.Drawing.Size(80, 17);
             this.labelDis.TabIndex = 5;
             this.labelDis.Text = "Discoverer:";
             // 
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(12, 125);
+            this.labelDate.Location = new System.Drawing.Point(11, 100);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(120, 20);
+            this.labelDate.Size = new System.Drawing.Size(108, 17);
             this.labelDate.TabIndex = 6;
             this.labelDate.Text = "Discovery Date:";
             // 
             // labelStat
             // 
             this.labelStat.AutoSize = true;
-            this.labelStat.Location = new System.Drawing.Point(72, 220);
+            this.labelStat.Location = new System.Drawing.Point(64, 176);
             this.labelStat.Name = "labelStat";
-            this.labelStat.Size = new System.Drawing.Size(60, 20);
+            this.labelStat.Size = new System.Drawing.Size(52, 17);
             this.labelStat.TabIndex = 3;
             this.labelStat.Text = "Status:";
             // 
             // modTitle
             // 
-            this.modTitle.Location = new System.Drawing.Point(138, 90);
+            this.modTitle.Location = new System.Drawing.Point(123, 72);
+            this.modTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modTitle.Name = "modTitle";
-            this.modTitle.Size = new System.Drawing.Size(400, 26);
+            this.modTitle.Size = new System.Drawing.Size(356, 22);
             this.modTitle.TabIndex = 8;
             // 
             // labelDes
             // 
             this.labelDes.AutoSize = true;
-            this.labelDes.Location = new System.Drawing.Point(72, 250);
+            this.labelDes.Location = new System.Drawing.Point(64, 200);
             this.labelDes.Name = "labelDes";
-            this.labelDes.Size = new System.Drawing.Size(131, 20);
+            this.labelDes.Size = new System.Drawing.Size(116, 17);
             this.labelDes.TabIndex = 9;
             this.labelDes.Text = "Intial Description:";
             // 
             // modComp
             // 
-            this.modComp.Location = new System.Drawing.Point(138, 190);
+            this.modComp.Location = new System.Drawing.Point(123, 152);
+            this.modComp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modComp.Name = "modComp";
-            this.modComp.Size = new System.Drawing.Size(400, 26);
+            this.modComp.Size = new System.Drawing.Size(356, 22);
             this.modComp.TabIndex = 10;
             // 
             // modDes
             // 
-            this.modDes.Location = new System.Drawing.Point(138, 273);
+            this.modDes.Location = new System.Drawing.Point(123, 218);
+            this.modDes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modDes.Multiline = true;
             this.modDes.Name = "modDes";
-            this.modDes.Size = new System.Drawing.Size(400, 272);
+            this.modDes.Size = new System.Drawing.Size(356, 218);
             this.modDes.TabIndex = 11;
             // 
             // buttonModify
             // 
-            this.buttonModify.Location = new System.Drawing.Point(398, 591);
+            this.buttonModify.Location = new System.Drawing.Point(354, 473);
+            this.buttonModify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(140, 30);
+            this.buttonModify.Size = new System.Drawing.Size(124, 24);
             this.buttonModify.TabIndex = 12;
             this.buttonModify.Text = "Modify Issue";
             this.buttonModify.UseVisualStyleBackColor = true;
@@ -143,49 +147,55 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(212, 591);
+            this.buttonCancel.Location = new System.Drawing.Point(188, 473);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(140, 30);
+            this.buttonCancel.Size = new System.Drawing.Size(124, 24);
             this.buttonCancel.TabIndex = 13;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // modDateTime
             // 
-            this.modDateTime.Location = new System.Drawing.Point(138, 125);
+            this.modDateTime.Location = new System.Drawing.Point(123, 100);
+            this.modDateTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modDateTime.Name = "modDateTime";
-            this.modDateTime.Size = new System.Drawing.Size(400, 26);
+            this.modDateTime.Size = new System.Drawing.Size(356, 22);
             this.modDateTime.TabIndex = 14;
             // 
             // modDis
             // 
             this.modDis.FormattingEnabled = true;
-            this.modDis.Location = new System.Drawing.Point(138, 155);
+            this.modDis.Location = new System.Drawing.Point(123, 124);
+            this.modDis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modDis.Name = "modDis";
-            this.modDis.Size = new System.Drawing.Size(400, 28);
+            this.modDis.Size = new System.Drawing.Size(356, 24);
             this.modDis.TabIndex = 15;
             // 
             // modStatus
             // 
             this.modStatus.FormattingEnabled = true;
-            this.modStatus.Location = new System.Drawing.Point(138, 220);
+            this.modStatus.Location = new System.Drawing.Point(123, 176);
+            this.modStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modStatus.Name = "modStatus";
-            this.modStatus.Size = new System.Drawing.Size(400, 28);
+            this.modStatus.Size = new System.Drawing.Size(356, 24);
             this.modStatus.TabIndex = 16;
             // 
             // modID
             // 
-            this.modID.Location = new System.Drawing.Point(138, 58);
+            this.modID.Location = new System.Drawing.Point(123, 46);
+            this.modID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modID.Name = "modID";
             this.modID.ReadOnly = true;
-            this.modID.Size = new System.Drawing.Size(82, 26);
+            this.modID.Size = new System.Drawing.Size(73, 22);
             this.modID.TabIndex = 17;
             // 
             // FormModifyIssue
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 676);
+            this.ClientSize = new System.Drawing.Size(558, 541);
             this.Controls.Add(this.modID);
             this.Controls.Add(this.modStatus);
             this.Controls.Add(this.modDis);
@@ -202,6 +212,7 @@
             this.Controls.Add(this.labelStat);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.labelID);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormModifyIssue";
             this.Text = "Modify Issue";
             this.Load += new System.EventHandler(this.FormModifyIssue_Load);

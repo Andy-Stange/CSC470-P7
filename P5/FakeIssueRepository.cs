@@ -1,6 +1,7 @@
 ﻿using Builder;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
@@ -164,9 +165,11 @@ namespace P5
                 }
             }
             int index = 0;
+            int tmp;
             foreach (int num in numbers)
             {
-                Discs[index] = Discs[index] + ": " + numbers;
+                tmp = numbers[index];
+                Discs[index] = Discs[index] + ": " + tmp.ToString();
                 index++;
             }
             return Discs;
@@ -192,9 +195,11 @@ namespace P5
                 }
             }
             int index = 0;
+            int tmp;
             foreach(int num in numbers)
             {
-                IsMonth[index] = IsMonth[index] + ": " + numbers;
+                tmp = numbers[index];
+                IsMonth[index] = IsMonth[index] + ": " + tmp.ToString();
                 index++;
             }
             return IsMonth;

@@ -25,24 +25,31 @@ namespace Builder
         {
             this.CenterToParent();
             FakeIssueRepository iss = new FakeIssueRepository();
+            FakeIssueStatusRepository IsStat = new FakeIssueStatusRepository();
             List<Issue> yourList = iss.GetAll(_selectedProj);
 
             dataIssue.ColumnCount = 7;
             dataIssue.Columns[0].Name = "Id";
             dataIssue.Columns[0].Width = 30;
             dataIssue.Columns[1].Name = "Title";
-            dataIssue.Columns[1].Width = 400;
+            dataIssue.Columns[1].Width = 200;
             dataIssue.Columns[2].Name = "Discovery Date";
-            dataIssue.Columns[1].Width = 150;
+            dataIssue.Columns[2].Width = 150;
             dataIssue.Columns[3].Name = "Discoverer";
+            dataIssue.Columns[3].Width = 100;
             dataIssue.Columns[4].Name = "IntialDes.";
+            dataIssue.Columns[4].Width = 100;
             dataIssue.Columns[5].Name = "Components";
+            dataIssue.Columns[5].Width = 100;
             dataIssue.Columns[6].Name = "Status";
+            dataIssue.Columns[6].Width = 80;
 
+            string IsStatVal;
             foreach (Issue i2 in yourList)
             {
-                string[] row = {i2.ID.ToString(),i2.Title,i2.DiscoveryDate.ToString("yyyymmdd hh:mm"),
-                                 i2.Discoverer,i2.InitialDescription,i2.Component,i2.IssueStatusID.ToString()};
+                IsStatVal = IsStat.GetValueByID(i2.IssueStatusID);
+                string[] row = {i2.ID.ToString(),i2.Title,i2.DiscoveryDate.ToString("MM/dd/yyyy HH:mm:ss tt"),
+                                 i2.Discoverer,i2.InitialDescription,i2.Component,IsStatVal};
                 dataIssue.Rows.Add(row);
             }
         }
