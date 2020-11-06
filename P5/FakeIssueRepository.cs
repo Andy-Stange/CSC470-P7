@@ -237,7 +237,7 @@ namespace P5
             {
                 return FUTURE_DISCOVERY_DATETIME_ERROR;
             }
-            if(issue.Discoverer == "")
+            if(issue.Discoverer == null)
             {
                 return EMPTY_DISCOVERER_ERROR;
             }

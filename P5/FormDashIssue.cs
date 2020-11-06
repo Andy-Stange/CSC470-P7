@@ -16,5 +16,10 @@ namespace Builder
         {
             InitializeComponent();
         }
+
+        private void FormDashIssue_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -142,6 +142,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDashIssue.resx">
+      <DependentUpon>FormDashIssue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormModifySelectIssue.resx">
       <DependentUpon>FormModifySelectIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecordIssue.resx">
+      <DependentUpon>FormRecordIssue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRemoveProject.resx">
       <DependentUpon>FormRemoveProject.cs</DependentUpon>

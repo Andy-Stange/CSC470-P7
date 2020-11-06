@@ -52,21 +52,38 @@ namespace P5
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
+            bool isValid = false;
+            string ValidIssue;
+            string IssueStat;
             FakeIssueRepository IssueRepository = new FakeIssueRepository();
             FakeIssueStatusRepository StatRepo = new FakeIssueStatusRepository();
             IssueStatus IsStat = new IssueStatus();
             Issue issue = new Issue();
-            issue.ProjectID = ID;
-            issue.ID = IssueRepository.GetNextIssueID(ID);
-            issue.DiscoveryDate = dateTimeDiscoveryDate.Value;
-            if (!IssueRepository.isDuplicate(textBoxIssueTitle.ToString()))
-                issue.Title = textBoxIssueTitle.ToString();
-            issue.Discoverer = comboBoxDiscoverer.SelectedItem.ToString();
-            issue.InitialDescription = textBoxInitialDescription.ToString();
-            issue.Component = textBoxComponent.ToString();
-            string IssueStat = comboBoxIssueStatus.SelectedItem.ToString();
-            issue.IssueStatusID = StatRepo.GetIdByStatus(IssueStat);
+                issue.ProjectID = ID;
+                issue.ID = IssueRepository.GetNextIssueID(ID);
+                issue.DiscoveryDate = dateTimeDiscoveryDate.Value;
+                if (!IssueRepository.isDuplicate(textBoxIssueTitle.ToString()))
+                    issue.Title = textBoxIssueTitle.Text.ToString();
+                if(comboBoxDiscoverer.SelectedIndex > 0)
+                    issue.Discoverer = comboBoxDiscoverer.SelectedItem.ToString();
+                issue.InitialDescription = textBoxInitialDescription.Text.ToString();
+                issue.Component = textBoxComponent.Text.ToString();
+                IssueStat = comboBoxIssueStatus.SelectedItem.ToString();
+                issue.IssueStatusID = StatRepo.GetIdByStatus(IssueStat);
 
+                ValidIssue = IssueRepository.ValidateIssue(issue);
+                if (ValidIssue == "")
+                {
+                    IssueRepository.Add(issue);
+                    isValid = true;
+                    MessageBox.Show("Issue was successfully created!", "Attention");
+                    this.Close();
+                }
+            else
+                {
+                    MessageBox.Show(ValidIssue, "Attention");
+                    isValid = false;
+                }
         }
     }
 }
