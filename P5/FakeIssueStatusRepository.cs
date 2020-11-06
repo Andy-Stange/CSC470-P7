@@ -1,11 +1,48 @@
-﻿using System.Collections.Generic;
+﻿using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace P5
 {
-    class FakeIssueStatusRepository:IIssueStatusRepository
+    public class FakeIssueStatusRepository : IIssueStatusRepository
     {
-        private List<IssueStatus> IssueStatuses;
+        private static List<IssueStatus> IssueStatuses = new List<IssueStatus>();
+
+        FakeIssueStatusRepository()
+        {
+            IssueStatuses.Add(new IssueStatus
+            {
+                ID = 1,
+                Value = "Open"
+            });
+            IssueStatuses.Add(new IssueStatus
+            {
+                ID = 2,
+                Value = "Assigned"
+            });
+            IssueStatuses.Add(new IssueStatus
+            {
+                ID = 3,
+                Value = "Fixed"
+            });
+            IssueStatuses.Add(new IssueStatus
+            {
+                ID = 4,
+                Value = "Closed - Won't fix"
+            });
+            IssueStatuses.Add(new IssueStatus
+            {
+                ID = 5,
+                Value = "Closed - Fixed"
+            });
+            IssueStatuses.Add(new IssueStatus
+            {
+                ID = 6,
+                Value = "Closed - By Design"
+            });
+        }
+
         public void Add(int StatID, string Value)
         {
             IssueStatus IsStat = new IssueStatus();

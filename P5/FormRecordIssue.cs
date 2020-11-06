@@ -12,7 +12,6 @@ namespace P5
 {
     public partial class FormRecordIssue : Form
     {
-        Project CurProject = new Project();
         private int ID;
         public FormRecordIssue(int ProjectID)
         {
@@ -22,7 +21,28 @@ namespace P5
 
         private void FormRecordIssue_Load(object sender, EventArgs e)
         {
-
+            int nextID;
+            string disc;
+            string IsStat;
+            FakeIssueRepository IssueRepo = new FakeIssueRepository();
+            FakeAppUserRepository AppRepo = new FakeAppUserRepository();
+            FakeIssueStatusRepository IssueStatRepo = new FakeIssueStatusRepository();
+            List<AppUser> userList = new List<AppUser>();
+            List<IssueStatus> issueStatList = new List<IssueStatus>();
+            nextID = IssueRepo.GetNextIssueID(ID);
+            textBoxIssueID.Text = nextID.ToString();
+            userList = AppRepo.GetAll();
+            foreach(AppUser user in userList)
+            {
+                disc = (user.LastName + ", " + user.FirstName);
+                comboBoxDiscoverer.Items.Add(disc);
+            }
+            issueStatList = IssueStatRepo.GetAll();
+            foreach(IssueStatus stat in issueStatList)
+            {
+                IsStat = stat.Value;
+                comboBoxIssueStatus.Items.Add(IsStat);
+            }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -41,10 +61,11 @@ namespace P5
             issue.DiscoveryDate = dateTimeDiscoveryDate.Value;
             if (!IssueRepository.isDuplicate(textBoxIssueTitle.ToString()))
                 issue.Title = textBoxIssueTitle.ToString();
-            issue.Discoverer = comboBoxDiscoverer.ToString();
+            issue.Discoverer = comboBoxDiscoverer.SelectedItem.ToString();
             issue.InitialDescription = textBoxInitialDescription.ToString();
             issue.Component = textBoxComponent.ToString();
-            string IssueStat = comboBoxIssueStatus.ToString();
+            string IssueStat = comboBoxIssueStatus.SelectedItem.ToString();
+            issue.IssueStatusID = StatRepo.GetIdByStatus(IssueStat);
 
         }
     }

@@ -19,6 +19,24 @@ namespace P5
                 EmailAddress = "david.b.bishop@gmail.com",
                 IsAuthenticated = false
             });
+            _AppUsers.Add("Kyle", new AppUser
+            {
+                UserName = "Kyle",
+                Password = "fast",
+                FirstName = "Kyle",
+                LastName = "Gosh",
+                EmailAddress = "Kyle.Gosh@trojans.dsu.edu",
+                IsAuthenticated = false
+            });
+            _AppUsers.Add("Andrew", new AppUser
+            {
+                UserName = "Andrew",
+                Password = "big",
+                FirstName = "Andrew",
+                LastName = "Stange",
+                EmailAddress = "andrew.stange@trojans.dsu.edu",
+                IsAuthenticated = false
+            });
         }
         public bool Login(string UserName, string givenPassword)
         {
