@@ -53,7 +53,6 @@ namespace P5
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-            bool isValid = false;
             string ValidIssue;
             string IssueStat;
             FakeIssueRepository IssueRepository = new FakeIssueRepository();
@@ -76,14 +75,12 @@ namespace P5
                 if (ValidIssue == "")
                 {
                     IssueRepository.Add(issue);
-                    isValid = true;
                     MessageBox.Show("Issue was successfully created!", "Attention");
                     this.Close();
                 }
             else
                 {
                     MessageBox.Show(ValidIssue, "Attention");
-                    isValid = false;
                 }
         }
     }
