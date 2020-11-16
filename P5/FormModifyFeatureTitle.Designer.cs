@@ -59,6 +59,7 @@
             this.cancelButton.TabIndex = 2;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // modifyButton
             // 
@@ -68,8 +69,9 @@
             this.modifyButton.TabIndex = 3;
             this.modifyButton.Text = "Modify Feature";
             this.modifyButton.UseVisualStyleBackColor = true;
+            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
             // 
-            // FormModifyTitle
+            // FormModifyFeatureTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,8 +80,9 @@
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.modifyTextbox);
             this.Controls.Add(this.labelTitle);
-            this.Name = "FormModifyTitle";
+            this.Name = "FormModifyFeatureTitle";
             this.Text = "Modify Feature";
+            this.Load += new System.EventHandler(this.FormModifyFeatureTitle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

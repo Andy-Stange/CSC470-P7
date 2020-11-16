@@ -232,6 +232,9 @@
     <EmbeddedResource Include="FormRecordIssue.resx">
       <DependentUpon>FormRecordIssue.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRemoveFeature.resx">
+      <DependentUpon>FormRemoveFeature.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRemoveProject.resx">
       <DependentUpon>FormRemoveProject.cs</DependentUpon>
     </EmbeddedResource>

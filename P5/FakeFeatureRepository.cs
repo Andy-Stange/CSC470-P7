@@ -9,8 +9,34 @@ namespace P5
         public const string EMPTY_TITLE_ERROR = "Title Must Have A Value!";
         public const string NOT_FOUND_ERROR = "Feature Not Found!";
         public const string INVALID_PROJECT_ID_ERROR = "Invalid ProjectID For Feature!";
-
+        private int _selectID;
         private static List<Feature> features = new List<Feature>();
+
+        public FakeFeatureRepository()
+        {
+            if(features.Count == 0)
+            {
+                features.Add(new Feature
+                {
+                    ID = 1,
+                    ProjectID = 1,
+                    Title = "Receivable"
+                });
+                features.Add(new Feature
+                {
+                    ID = 2,
+                    ProjectID = 1,
+                    Title = "Payables"
+                });
+                features.Add(new Feature
+                {
+                    ID = 3,
+                    ProjectID = 1,
+                    Title = "Balance Sheet"
+                });
+            }
+
+        }
 
         public string Add(Feature feature)
         {
@@ -49,7 +75,6 @@ namespace P5
         public string Modify(Feature feature)
         {
             string newFeatureTitle = feature.Title;
-            int index = 0;
             if(newFeatureTitle == "")
             {
                 return EMPTY_TITLE_ERROR;
@@ -61,11 +86,16 @@ namespace P5
                     return DUPLICATE_TITLE_ERROR;
                 }
             }
-            foreach(Feature feat in features)
+            _selectID = feature.ID;
+            int index = 0;
+            foreach (Feature feat in features)
             {
-                if(feat.ID == feature.ID)
+                if (_selectID == feat.ID)
                 {
-                    features[index] = feature;
+                    features[index].ID = feature.ID;
+                    features[index].Title = feature.Title; ;
+                    
+
                     return NO_ERROR;
                 }
                 index++;
@@ -112,6 +142,18 @@ namespace P5
             }
             NextID++;
             return NextID;
+        }
+        public bool isDuplicate(string title)
+        {
+            bool isDup = false;
+            foreach (Feature feat in features)
+            {
+                if (feat.Title == title)
+                {
+                    isDup = true;
+                }
+            }
+            return isDup;
         }
     }
 }

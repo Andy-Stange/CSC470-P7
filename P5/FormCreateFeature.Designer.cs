@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.labelTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.featTextBox = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.createButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,13 +44,13 @@
             this.labelTitle.Text = "Title:";
             this.labelTitle.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // featTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 73);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "createTextbox";
-            this.textBox1.Size = new System.Drawing.Size(668, 27);
-            this.textBox1.TabIndex = 1;
+            this.featTextBox.Location = new System.Drawing.Point(104, 73);
+            this.featTextBox.Multiline = true;
+            this.featTextBox.Name = "featTextBox";
+            this.featTextBox.Size = new System.Drawing.Size(668, 27);
+            this.featTextBox.TabIndex = 1;
             // 
             // cancelButton
             // 
@@ -69,6 +69,7 @@
             this.createButton.TabIndex = 3;
             this.createButton.Text = "Create Feature";
             this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
             // FormCreateFeature
             // 
@@ -77,10 +78,11 @@
             this.ClientSize = new System.Drawing.Size(838, 222);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.featTextBox);
             this.Controls.Add(this.labelTitle);
             this.Name = "FormCreateFeature";
             this.Text = "Create Feature";
+            this.Load += new System.EventHandler(this.FormCreateFeature_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,7 +91,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox featTextBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button createButton;
     }

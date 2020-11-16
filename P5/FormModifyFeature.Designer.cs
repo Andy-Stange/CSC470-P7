@@ -41,17 +41,19 @@
             this.dataModify.Name = "dataModify";
             this.dataModify.RowHeadersWidth = 62;
             this.dataModify.RowTemplate.Height = 28;
-            this.dataModify.Size = new System.Drawing.Size(721, 352);
+            this.dataModify.Size = new System.Drawing.Size(729, 352);
             this.dataModify.TabIndex = 0;
+            this.dataModify.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataModify_CellContentClick);
             // 
             // selectButton
             // 
-            this.selectButton.Location = new System.Drawing.Point(641, 434);
+            this.selectButton.Location = new System.Drawing.Point(649, 434);
             this.selectButton.Name = "selectButton";
             this.selectButton.Size = new System.Drawing.Size(130, 30);
             this.selectButton.TabIndex = 1;
             this.selectButton.Text = "Select Feature";
             this.selectButton.UseVisualStyleBackColor = true;
+            this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
             // 
             // cancelButton
             // 
@@ -61,6 +63,7 @@
             this.cancelButton.TabIndex = 2;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // FormModifyFeature
             // 
@@ -72,6 +75,7 @@
             this.Controls.Add(this.dataModify);
             this.Name = "FormModifyFeature";
             this.Text = "Select Feature";
+            this.Load += new System.EventHandler(this.FormModifyFeature_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataModify)).EndInit();
             this.ResumeLayout(false);
 

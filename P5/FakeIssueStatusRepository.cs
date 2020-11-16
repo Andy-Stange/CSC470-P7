@@ -1,7 +1,4 @@
-﻿using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 
 namespace P5
 {

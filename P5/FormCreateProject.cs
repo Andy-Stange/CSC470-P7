@@ -30,10 +30,12 @@ namespace P5
             if (result == FakeProjectRepository.NO_ERROR)
             {
                 MessageBox.Show("Project added successfully.");
+                return;
             }
             else
             {
                 MessageBox.Show("Project not created. " + result, "Attention.");
+                return;
             }
             this.Close();
         }

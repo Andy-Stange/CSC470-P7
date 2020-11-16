@@ -12,6 +12,10 @@ namespace P5
         public const string MISSING_PROJECTID_ERROR = "Must Select A Project For This Requirement!";
 
         List<Requirement> requirements = new List<Requirement>();
+        public FakeRequirementRepository()
+        {
+            
+        }
 
         public string Add(Requirement requirement)
         {

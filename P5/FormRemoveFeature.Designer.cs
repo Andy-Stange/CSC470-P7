@@ -52,6 +52,7 @@
             this.selectButton.TabIndex = 1;
             this.selectButton.Text = "Select Feature";
             this.selectButton.UseVisualStyleBackColor = true;
+            this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
             // 
             // cancelButton
             // 
@@ -61,8 +62,9 @@
             this.cancelButton.TabIndex = 2;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // FormModifyFeature
+            // FormRemoveFeature
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -72,6 +74,7 @@
             this.Controls.Add(this.dataRemove);
             this.Name = "FormRemoveFeature";
             this.Text = "Select Feature";
+            this.Load += new System.EventHandler(this.FormRemoveFeature_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataRemove)).EndInit();
             this.ResumeLayout(false);
 
