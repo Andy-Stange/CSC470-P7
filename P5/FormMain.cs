@@ -137,5 +137,12 @@ namespace P5
             form.ShowDialog();
             form.Dispose();
         }
+
+        private void createToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormCreateReq form = new FormCreateReq(CurrentProjectID);
+            form.ShowDialog();
+            form.Dispose();
+        }
     }
 }

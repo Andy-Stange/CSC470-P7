@@ -89,8 +89,9 @@
             this.buttonCreate.TabIndex = 5;
             this.buttonCreate.Text = "Create Requirement";
             this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
-            // Form1
+            // FormCreateReq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,8 +102,9 @@
             this.Controls.Add(this.comboBoxFeature);
             this.Controls.Add(this.labelFeat);
             this.Controls.Add(this.labelState);
-            this.Name = "Form1";
+            this.Name = "FormCreateReq";
             this.Text = "FormCreateReq";
+            this.Load += new System.EventHandler(this.FormCreateReq_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

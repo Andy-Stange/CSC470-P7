@@ -25,9 +25,9 @@ namespace P5
                 });
                 requirements.Add(new Requirement
                 {
-                    ID = 12,
+                    ID = 2,
                     ProjectID = 1,
-                    FeatureID = 12,
+                    FeatureID = 2,
                     Statement = "This is how we pay things..."
                 });
                 requirements.Add(new Requirement
@@ -146,6 +146,22 @@ namespace P5
                 }
                 index++;
             }
+        }
+        public int GetNextReqID(int ProjectID)
+        {
+            int NextID = 0;
+            foreach (Requirement r in requirements)
+            {
+                if (ProjectID == r.ProjectID)
+                {
+                    if (r.ID > NextID)
+                    {
+                        NextID = r.ID;
+                    }
+                }
+            }
+            NextID++;
+            return NextID;
         }
 
     }
