@@ -14,7 +14,32 @@ namespace P5
         List<Requirement> requirements = new List<Requirement>();
         public FakeRequirementRepository()
         {
-            
+            if(requirements.Count == 0)
+            {
+                requirements.Add(new Requirement
+                {
+                    ID = 1,
+                    ProjectID = 1,
+                    FeatureID = 1,
+                    Statement = "This is how we recieve things..."
+                });
+                requirements.Add(new Requirement
+                {
+                    ID = 12,
+                    ProjectID = 1,
+                    FeatureID = 12,
+                    Statement = "This is how we pay things..."
+                });
+                requirements.Add(new Requirement
+                {
+                    ID = 3,
+                    ProjectID = 1,
+                    FeatureID = 3,
+                    Statement = "This is how we balance things..."
+                });
+
+
+            }
         }
 
         public string Add(Requirement requirement)
@@ -86,12 +111,12 @@ namespace P5
             return REQUIREMENT_NOT_FOUND_ERROR;
 
         }
-        public Requirement GetRequirementByID(int requirementID)
+        public Requirement GetRequirementByID(int featureID)
         {
             Requirement foundReq = new Requirement();
             foreach(Requirement req in requirements)
             {
-                if(req.ID == requirementID)
+                if(req.FeatureID == featureID)
                 {
                     foundReq = req;
                 }
