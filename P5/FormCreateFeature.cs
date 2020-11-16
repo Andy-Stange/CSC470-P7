@@ -49,6 +49,7 @@ namespace Builder
             else
             {
                 f.Title = featTextBox.Text.Trim();
+                feat.Add(f);
             }
             this.Close();
 
