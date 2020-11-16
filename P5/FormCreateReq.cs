@@ -35,7 +35,7 @@ namespace Builder
         {
             this.CenterToParent();
             string isFeat;
-
+            comboBoxFeature.Text = "<Make Selection>";
             FakeFeatureRepository fake = new FakeFeatureRepository();
             FakeRequirementRepository freq = new FakeRequirementRepository();
             List<Feature> listFeat = new List<Feature>();
@@ -44,7 +44,8 @@ namespace Builder
 
             textBoxState.Enabled = false;
             buttonCreate.Enabled = false;
-            
+           
+
             foreach(Feature f in listFeat)
             {
                 isFeat = f.Title;
