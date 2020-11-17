@@ -12,9 +12,20 @@ namespace Builder
 {
     public partial class FormModifyReq : Form
     {
-        public FormModifyReq()
+        private int _ProjectID;
+        private int _FeatrueID;
+        private int _RequirementID;
+        public FormModifyReq(int ProjID, int FeatID, int ReqID)
         {
             InitializeComponent();
+            _ProjectID = ProjID;
+            _FeatrueID = FeatID;
+            _RequirementID = ReqID;
+        }
+
+        private void FormModifyReq_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

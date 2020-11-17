@@ -32,79 +32,88 @@
             this.labelFeat = new System.Windows.Forms.Label();
             this.comboBoxFeature = new System.Windows.Forms.ComboBox();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonCreate = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.buttonSelect = new System.Windows.Forms.Button();
+            this.dataGridReqs = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridReqs)).BeginInit();
             this.SuspendLayout();
             // 
             // labelState
             // 
             this.labelState.AutoSize = true;
-            this.labelState.Location = new System.Drawing.Point(39, 99);
+            this.labelState.Location = new System.Drawing.Point(13, 79);
             this.labelState.Name = "labelState";
-            this.labelState.Size = new System.Drawing.Size(88, 20);
+            this.labelState.Size = new System.Drawing.Size(100, 17);
             this.labelState.TabIndex = 0;
-            this.labelState.Text = "Statement:";
+            this.labelState.Text = "Requirements:";
             // 
             // labelFeat
             // 
             this.labelFeat.AutoSize = true;
-            this.labelFeat.Location = new System.Drawing.Point(58, 50);
+            this.labelFeat.Location = new System.Drawing.Point(52, 40);
             this.labelFeat.Name = "labelFeat";
-            this.labelFeat.Size = new System.Drawing.Size(69, 20);
+            this.labelFeat.Size = new System.Drawing.Size(61, 17);
             this.labelFeat.TabIndex = 1;
             this.labelFeat.Text = "Feature:";
             // 
             // comboBoxFeature
             // 
             this.comboBoxFeature.FormattingEnabled = true;
-            this.comboBoxFeature.Location = new System.Drawing.Point(133, 50);
+            this.comboBoxFeature.Location = new System.Drawing.Point(118, 40);
+            this.comboBoxFeature.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxFeature.Name = "comboBoxFeature";
-            this.comboBoxFeature.Size = new System.Drawing.Size(728, 28);
+            this.comboBoxFeature.Size = new System.Drawing.Size(648, 24);
             this.comboBoxFeature.TabIndex = 2;
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(437, 602);
+            this.buttonCancel.Location = new System.Drawing.Point(388, 482);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(180, 30);
+            this.buttonCancel.Size = new System.Drawing.Size(160, 24);
             this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // buttonCreate
+            // buttonSelect
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(681, 602);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(180, 30);
-            this.buttonCreate.TabIndex = 5;
-            this.buttonCreate.Text = "Create Requirement";
-            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonSelect.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonSelect.Location = new System.Drawing.Point(605, 482);
+            this.buttonSelect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSelect.Name = "buttonSelect";
+            this.buttonSelect.Size = new System.Drawing.Size(160, 24);
+            this.buttonSelect.TabIndex = 5;
+            this.buttonSelect.Text = "Select Requirement";
+            this.buttonSelect.UseVisualStyleBackColor = true;
+            this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
             // 
-            // dataGridView1
+            // dataGridReqs
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(133, 99);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(728, 468);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridReqs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridReqs.Location = new System.Drawing.Point(118, 79);
+            this.dataGridReqs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridReqs.Name = "dataGridReqs";
+            this.dataGridReqs.RowHeadersWidth = 62;
+            this.dataGridReqs.RowTemplate.Height = 28;
+            this.dataGridReqs.Size = new System.Drawing.Size(647, 374);
+            this.dataGridReqs.TabIndex = 6;
             // 
             // FormModifySelectReq
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 653);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.buttonCreate);
+            this.ClientSize = new System.Drawing.Size(813, 522);
+            this.Controls.Add(this.dataGridReqs);
+            this.Controls.Add(this.buttonSelect);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.comboBoxFeature);
             this.Controls.Add(this.labelFeat);
             this.Controls.Add(this.labelState);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormModifySelectReq";
             this.Text = "Select Requirement";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormModifySelectReq_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridReqs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,7 +125,7 @@
         private System.Windows.Forms.Label labelFeat;
         private System.Windows.Forms.ComboBox comboBoxFeature;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button buttonCreate;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonSelect;
+        private System.Windows.Forms.DataGridView dataGridReqs;
     }
 }
