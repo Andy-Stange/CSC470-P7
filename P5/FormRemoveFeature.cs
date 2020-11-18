@@ -63,8 +63,8 @@ namespace Builder
                 FakeFeatureRepository fake1 = new FakeFeatureRepository();
                 Feature f2 = fake1.GetFeatureByID(_selectID);
                 FakeRequirementRepository req = new FakeRequirementRepository();
-                Requirement r = req.GetRequirementByID(_selectID);
-
+               
+                
                 DialogResult result = MessageBox.Show("Are you sure you want to Remove:" + f2.Title, "Confirmation", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
@@ -72,7 +72,7 @@ namespace Builder
                     if(result2 == DialogResult.Yes)
                     { 
                         string res = fake1.Remove(f2);
-                        string res2 = req.Remove(r);
+                        req.RemoveByFeatureID(_selectID);
 
                     }
                     else
