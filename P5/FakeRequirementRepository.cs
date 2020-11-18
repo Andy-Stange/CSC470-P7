@@ -11,7 +11,7 @@ namespace P5
         public const string MISSING_FEATUREID_ERROR = "Must Select A Feature For This Requirement!";
         public const string MISSING_PROJECTID_ERROR = "Must Select A Project For This Requirement!";
 
-        List<Requirement> requirements = new List<Requirement>();
+        private static List<Requirement> requirements = new List<Requirement>();
         public FakeRequirementRepository()
         {
             if(requirements.Count == 0)

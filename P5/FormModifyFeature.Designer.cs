@@ -36,20 +36,24 @@
             // 
             // dataModify
             // 
+            this.dataModify.AllowUserToAddRows = false;
             this.dataModify.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataModify.Location = new System.Drawing.Point(50, 50);
+            this.dataModify.Location = new System.Drawing.Point(33, 32);
+            this.dataModify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataModify.MultiSelect = false;
             this.dataModify.Name = "dataModify";
             this.dataModify.RowHeadersWidth = 62;
             this.dataModify.RowTemplate.Height = 28;
-            this.dataModify.Size = new System.Drawing.Size(729, 352);
+            this.dataModify.Size = new System.Drawing.Size(486, 229);
             this.dataModify.TabIndex = 0;
             this.dataModify.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataModify_CellContentClick);
             // 
             // selectButton
             // 
-            this.selectButton.Location = new System.Drawing.Point(649, 434);
+            this.selectButton.Location = new System.Drawing.Point(433, 282);
+            this.selectButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(130, 30);
+            this.selectButton.Size = new System.Drawing.Size(87, 19);
             this.selectButton.TabIndex = 1;
             this.selectButton.Text = "Select Feature";
             this.selectButton.UseVisualStyleBackColor = true;
@@ -57,9 +61,10 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(459, 434);
+            this.cancelButton.Location = new System.Drawing.Point(306, 282);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(130, 30);
+            this.cancelButton.Size = new System.Drawing.Size(87, 19);
             this.cancelButton.TabIndex = 2;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -67,12 +72,13 @@
             // 
             // FormModifyFeature
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 476);
+            this.ClientSize = new System.Drawing.Size(552, 309);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.selectButton);
             this.Controls.Add(this.dataModify);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormModifyFeature";
             this.Text = "Select Feature";
             this.Load += new System.EventHandler(this.FormModifyFeature_Load);

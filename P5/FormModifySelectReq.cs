@@ -17,6 +17,7 @@ namespace Builder
         private List<Feature> Flist = new List<Feature>();
         private int _SelectedFeat;
         private int _SelectedReq;
+        private FakeRequirementRepository Fake1 = new FakeRequirementRepository();
         public FormModifySelectReq(int ProjID)
         {
             InitializeComponent();
@@ -68,7 +69,9 @@ namespace Builder
                 }
             }
 
-            reqList = fakeReq.GetAll(_SelectedProj);
+            reqList = Fake1.GetAll(_SelectedProj);
+
+
 
             dataGridReqs.ColumnCount = 2;
             dataGridReqs.Columns[0].Name = "ID";
@@ -85,6 +88,12 @@ namespace Builder
                     dataGridReqs.Rows.Add(row);
                 }
 
+            }
+            if(dataGridReqs.Rows.Count == 0)
+            {
+                MessageBox.Show("This Feature Has No Requirements!\n Create Requirements to Modify Them.", "Attention");
+                dataGridReqs.Enabled = false;
+                buttonSelect.Enabled = false;
             }
 
         }
