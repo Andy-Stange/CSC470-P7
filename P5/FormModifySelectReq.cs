@@ -102,8 +102,10 @@ namespace Builder
                 _SelectedReq = Convert.ToInt32(row.Cells["ID"].Value);
 
                 FormModifyReq form = new FormModifyReq(_SelectedProj, _SelectedFeat, _SelectedReq);
+                this.Hide();
                 form.ShowDialog();
                 form.Dispose();
+                this.Close();
             }
         }
     }
