@@ -35,7 +35,6 @@ namespace Builder
         {
             this.CenterToParent();
             string isFeat;
-            comboBoxFeature.Text = "<Make Selection>";
             FakeFeatureRepository fake = new FakeFeatureRepository();
             FakeRequirementRepository freq = new FakeRequirementRepository();
             List<Feature> listFeat = new List<Feature>();
@@ -44,7 +43,9 @@ namespace Builder
 
             textBoxState.Enabled = false;
             buttonCreate.Enabled = false;
-           
+
+            comboBoxFeature.Items.Add("<Make Selection>");
+            comboBoxFeature.SelectedIndex = 0;
 
             foreach(Feature f in listFeat)
             {
@@ -97,8 +98,17 @@ namespace Builder
 
         private void comboBoxFeat_SelectedIndexChanged(object sender,  System.EventArgs e)
         {
-            textBoxState.Enabled = true;
-            buttonCreate.Enabled = true;
+            if(comboBoxFeature.SelectedIndex != 0)
+            {
+                textBoxState.Enabled = true;
+                buttonCreate.Enabled = true;
+            }
+            else
+            {
+                textBoxState.Enabled = false;
+                buttonCreate.Enabled = false;
+            }
+
         }
     }
 }

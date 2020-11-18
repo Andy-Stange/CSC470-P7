@@ -37,6 +37,8 @@ namespace Builder
             FakeFeatureRepository FakeFeat = new FakeFeatureRepository();
 
             Flist = FakeFeat.GetAll(_SelectedProj);
+            comboBoxFeature.Items.Add("<Make Selection>");
+            comboBoxFeature.SelectedIndex = 0;
 
             foreach (Feature feat in Flist)
             {
@@ -51,47 +53,59 @@ namespace Builder
         }
         private void comboBoxFeat_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            dataGridReqs.Enabled = true;
-            buttonSelect.Enabled = true;
-
-            this.dataGridReqs.DataSource = null;
-            this.dataGridReqs.Rows.Clear();
-
-            FakeRequirementRepository fakeReq = new FakeRequirementRepository();
-            List<Requirement> reqList = new List<Requirement>();
-            string selF = comboBoxFeature.Text;
-
-            foreach(Feature feat in Flist)
+            if (comboBoxFeature.SelectedIndex != 0)
             {
-                if(feat.Title == selF)
+
+
+                dataGridReqs.Enabled = true;
+                buttonSelect.Enabled = true;
+
+                this.dataGridReqs.DataSource = null;
+                this.dataGridReqs.Rows.Clear();
+
+                FakeRequirementRepository fakeReq = new FakeRequirementRepository();
+                List<Requirement> reqList = new List<Requirement>();
+                string selF = comboBoxFeature.Text;
+
+                foreach (Feature feat in Flist)
                 {
-                    _SelectedFeat = feat.ID;
-                }
-            }
-
-            reqList = Fake1.GetAll(_SelectedProj);
-
-
-
-            dataGridReqs.ColumnCount = 2;
-            dataGridReqs.Columns[0].Name = "ID";
-            dataGridReqs.Columns[0].Width = 30;
-            dataGridReqs.Columns[1].Name = "Requirement";
-            dataGridReqs.Columns[1].Width = 620;
-            dataGridReqs.RowTemplate.Height = 20;
-
-            foreach (Requirement req in reqList)
-            {
-                if(req.FeatureID == _SelectedFeat)
-                {
-                    string[] row = { req.ID.ToString(), req.Statement };
-                    dataGridReqs.Rows.Add(row);
+                    if (feat.Title == selF)
+                    {
+                        _SelectedFeat = feat.ID;
+                    }
                 }
 
+                reqList = Fake1.GetAll(_SelectedProj);
+
+
+
+                dataGridReqs.ColumnCount = 2;
+                dataGridReqs.Columns[0].Name = "ID";
+                dataGridReqs.Columns[0].Width = 30;
+                dataGridReqs.Columns[1].Name = "Requirement";
+                dataGridReqs.Columns[1].Width = 620;
+                dataGridReqs.RowTemplate.Height = 20;
+
+                foreach (Requirement req in reqList)
+                {
+                    if (req.FeatureID == _SelectedFeat)
+                    {
+                        string[] row = { req.ID.ToString(), req.Statement };
+                        dataGridReqs.Rows.Add(row);
+                    }
+
+                }
+                if (dataGridReqs.Rows.Count == 0)
+                {
+                    MessageBox.Show("This Feature Has No Requirements!\n Create Requirements to Modify Them.", "Attention");
+                    dataGridReqs.Enabled = false;
+                    buttonSelect.Enabled = false;
+                }
             }
-            if(dataGridReqs.Rows.Count == 0)
+            else
             {
-                MessageBox.Show("This Feature Has No Requirements!\n Create Requirements to Modify Them.", "Attention");
+                this.dataGridReqs.DataSource = null;
+                this.dataGridReqs.Rows.Clear();
                 dataGridReqs.Enabled = false;
                 buttonSelect.Enabled = false;
             }
